@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Ana içerik başlangıcı -->
+<div class="container mt-5">
+  <div class="blog-post">
+    <h2 class="blog-post-title" style="color: #007BFF;">{{ post.title }}</h2>
+    <hr>
+    <p class="blog-post-content" style="font-size: 18px; line-height: 1.6;">{{ post.content }}</p>
+    <div class="mt-4">
+      <a href="{% url 'blog_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+  </div>
+</div>
+<!-- Ana içerik bitişi -->
+{% endblock %}

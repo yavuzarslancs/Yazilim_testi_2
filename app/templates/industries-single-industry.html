@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="industry-detail-section">
+    <div class="container">
+        <h1>{{ industry.name }}</h1>
+        <img src="{{ industry.image_url }}" alt="{{ industry.name }}" class="industry-image">
+        <p>{{ industry.description }}</p>
+        <a href="{% url 'industries' %}" class="btn btn-secondary">Back to Industries</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sitenizin Adı{% endblock %}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigasyon linkleri -->
+        </nav>
+        <div>
+            {% if user.is_authenticated %}
+                Hoşgeldiniz, {{ user.username }}! <a href="{% url 'logout' %}">Çıkış Yap</a>
+            {% else %}
+                <a href="{% url 'login' %}">Giriş Yap</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Sayfa içeriği buraya gelecek -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer içeriği -->
+    </footer>
+</body>
+</html>
